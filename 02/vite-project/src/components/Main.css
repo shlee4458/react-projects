@@ -1,0 +1,33 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: #282D35;
+}
+
+main {
+    font-family: Inter, sans-serif;
+    min-height: 100vh;
+}
+
+.nowrap {
+    white-space: nowrap;
+}
+
+.main__h1 {
+    margin: 57px 100px 45px 25px;
+    color: #FFF;
+    font-size: 39.06px;
+    font-weight: 700;
+    letter-spacing: -1.953px;
+}
+
+.main__ul {
+    color: #FFF;
+    font-size: 16px;
+    font-weight: 400;
+    margin-left: 75px;
+    line-height: 00%;
+}
+
+
