@@ -10,6 +10,14 @@
     --HERO-MARGIN: 16px;
 }
 
+.gray {
+    color: #918E9B;
+}
+
+.bold {
+    font-weight: bold;
+}
+
 /* || NAVBAR */
 
 nav {
@@ -57,4 +65,25 @@ section {
     font-size: 16px;
     font-weight: 300;
     line-height: 110%; /* 17.6px */
+}
+
+
+/* || CARD */
+.card {
+    width: 175px;
+    font-size: 12px;
+}
+
+.card__image {
+    width: 100%;
+    border-radius: 9px;
+}
+
+.card__stats {
+    display: flex;
+    align-items: center;
+}
+
+.card__star {
+    width: 14px;
 }

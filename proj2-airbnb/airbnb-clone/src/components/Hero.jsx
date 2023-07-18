@@ -1,5 +1,5 @@
 import React from "react";
-import heroGrid from "../assets/hero-grid.jpg"
+import heroGrid from "/hero-grid.jpg"
 import "../style.css"
 
 export default function Hero() {
