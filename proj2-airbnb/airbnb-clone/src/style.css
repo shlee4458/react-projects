@@ -44,7 +44,7 @@ section {
 
 .hero__img {
     margin-top: 12px;
-    max-width: 400px;
+    max-width: 75%;
     align-self: center;
     margin-bottom: 16px;
 }
@@ -69,14 +69,26 @@ section {
 
 
 /* || CARD */
+.cards__list {
+    display: flex;
+    gap: 20px;
+    overflow-x: auto;
+}
+
+
 .card {
     width: 175px;
     font-size: 12px;
+    flex: 0 0 auto;
+    display: flex;
+    flex-direction: column;
+    position: relative;
 }
 
 .card__image {
     width: 100%;
     border-radius: 9px;
+    margin-bottom: 9px;
 }
 
 .card__stats {
@@ -86,4 +98,19 @@ section {
 
 .card__star {
     width: 14px;
+}
+
+.card__title {
+    text-overflow: ellipsis;
+    padding-top: 5px;
+    padding-bottom: 4px;
+}
+
+.card__badge {
+    position: absolute;
+    top: 6px;
+    left: 6px;
+    background-color: aliceblue;
+    border-radius: 5px;
+    padding: 5px;
 }
