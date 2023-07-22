@@ -1,6 +1,5 @@
 import React from "react";
 import '../index.css'
-import data from '../meme.js'
 
 export default function Meme() {
 
@@ -11,13 +10,21 @@ export default function Meme() {
         randomImage: "http://i.imgflip.com/1bij.jpg"
     });
 
-    const [allMemesImages, setAllMemesImages] = React.useState(data);
+    const [allMemes, setAllMemes] = React.useState();
+
+    // fetch api when the page first loads
+    React.useEffect(() => {
+        fetch("https://api.imgflip.com/get_memes")
+            .then(res => res.json())
+            .then(data => setAllMemes(data.data.memes))
+    }, [])
+    
+
 
     function clickHandler(event) {
         // randomly choose the data from the allMemesImages
-        const memesArray = allMemesImages.data.memes
-        const randomNumber = Math.floor(Math.random() * memesArray.length)
-        let newData = memesArray[randomNumber]
+        const randomNumber = Math.floor(Math.random() * allMemes.length)
+        let newData = allMemes[randomNumber]
         const { name, value, type } = event.target
         setMeme(prevMeme => {
             return {
