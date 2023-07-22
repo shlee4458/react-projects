@@ -13,15 +13,16 @@ export default function Meme() {
 
     const [allMemesImages, setAllMemesImages] = React.useState(data);
 
-    function clickHandler() {
+    function clickHandler(event) {
         // randomly choose the data from the allMemesImages
         const memesArray = allMemesImages.data.memes
         const randomNumber = Math.floor(Math.random() * memesArray.length)
         let newData = memesArray[randomNumber]
+        const { name, value, type } = event.target
         setMeme(prevMeme => {
             return {
                 ...prevMeme,
-                randomImage: newData.url
+                [name]: type == "submit" ? newData.url : value
             }
         })
     }
@@ -30,13 +31,17 @@ export default function Meme() {
     return (
         <main>
             <form className="meme__form">
-                <input className="meme__input" type="text" placeholder={meme.topText}/>
-                <input className="meme__input" type="text" placeholder={meme.bottomText}/>
+                <input onChange={clickHandler} className="meme__input" type="text" placeholder={meme.topText} name="topText" value={meme.topText}/>
+                <input onChange={clickHandler} className="meme__input" type="text" placeholder={meme.bottomText} name="bottomText" value={meme.bottomText}/>
 
                 <button 
-                onMouseEnter={clickHandler} className="meme__button">Get a new meme image</button>
-                <img src={meme.randomImage} className="meme__image"/>
+                onMouseEnter={clickHandler} className="meme__button" name="randomImage">Get a new meme image</button>
             </form>
+            <div className="meme">
+                <img src={meme.randomImage}  className="meme__image"/>
+                <h2 className="meme--text top">{meme.topText}</h2>
+                <h2 className="meme--text bottom">{meme.bottomText}</h2>
+            </div>
         </main>
     )
 }
