@@ -80,9 +80,7 @@ body {
     justify-content: center;
 }
 
-.dice .clicked {
-    background-color: #59E391;
-}
+
 
 .main__button {
     margin-top: 30px;
